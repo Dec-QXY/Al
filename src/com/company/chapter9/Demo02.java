@@ -1,4 +1,4 @@
-package com.company.study01;
+package com.company.chapter9;
 
 /**
  * @author decqxy
