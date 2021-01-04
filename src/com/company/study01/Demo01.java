@@ -100,8 +100,11 @@ public class Demo01 {
         }
     }
 
+    /**
+     * 选择排序算法
+     * @param arr
+     */
     public static void selectSort(int[] arr) {
-
         int temp, num;
         // 外循环控制，
         for (int i = 1; i < arr.length; i++) {
