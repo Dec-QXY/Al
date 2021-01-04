@@ -13,11 +13,13 @@ public class Demo01 {
         }
         System.out.println("");
         // 直接插入排序
-        binSort(arr);
+        // binSort(arr);
         // 冒泡排序
         // bubbleSort(arr);
         // 选择排序
         // selectSort(arr);
+        // 快速排序
+        quickSort(arr,1, arr.length - 1);
         // 结果输出
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -116,6 +118,49 @@ public class Demo01 {
                     arr[num] = temp;
                 }
             }
+        }
+    }
+
+    public static int quickSortPass(int[] arr, int low, int high) {
+        int x;
+        // 初始化数据,让x处于最低位的值
+        x = arr[low];
+        // 遍历数组
+        while (low < high) {
+            // 遍历数组，倒着寻找比x大的数字的部分，然后进行下表减的操作
+            while (low < high && arr[high] > x) {
+                high--;
+            }
+
+            if (low < high) {
+               // 将小于x的值放在low位置上
+                arr[low] = arr[high];
+                low++;
+            }
+
+            while (low < high && arr[low] < x) {
+                low++;
+            }
+
+            if (low < high) {
+                // 将大于x的值放在high位置上
+                arr[high] = arr[low];
+                high--;
+            }
+        }
+        // 将最开始初始化的值放在地位
+        arr[low] = x;
+        return low;
+    }
+
+    public static void quickSort(int[] arr, int low, int high) {
+        // 当low<high的时候执行
+        if (low < high) {
+            int passNum = quickSortPass(arr, low, high);
+            // 递归从低位部分开始比较
+            quickSort(arr, low, passNum - 1);
+            // 递归从高位部分边开始比较
+            quickSort(arr, passNum + 1, high);
         }
     }
 
