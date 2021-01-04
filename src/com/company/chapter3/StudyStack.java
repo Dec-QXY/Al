@@ -20,10 +20,7 @@ class StackJava {
 
     private int top;
 
-    public StackJava(int maxSize) {
-        this.maxSize = maxSize;
-        stack = new int[maxSize];
-    }
+
 
     public boolean ifFull() {
         return top == maxSize - 1;
