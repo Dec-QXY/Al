@@ -13,11 +13,11 @@ public class Demo01 {
         }
         System.out.println("");
         // 直接插入排序
-        // binSort(arr);
+        binSort(arr);
         // 冒泡排序
         // bubbleSort(arr);
         // 选择排序
-        selectSort(arr);
+        // selectSort(arr);
         // 结果输出
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -46,33 +46,27 @@ public class Demo01 {
     }
 
     /**
-     * 二分法插入排序
+     * 折半插入排序
      * @param arr
      */
     public static void binSort(int[] arr) {
-        // 定义
-        int low, high, mid;
-        // 控制每一堂比较的数字
+        int k, low, high, mid;
         for (int i = 2; i < arr.length; i++) {
-            // 初始化0位置上为下一次排序比较的元素
-            arr[0] = arr[i];
+            k = arr[i];
             low = 1;
             high = i - 1;
-            // 循环遍历较大的放在前面，小的放在后面拆入其中
             while (low <= high) {
                 mid = (low + high) / 2;
-                if (arr[low] < arr[mid]) {
+                if (k < arr[mid]) {
                     high = mid - 1;
                 }else {
                     low = mid + 1;
                 }
             }
-            // 循环调整部分排序后的数字，主要是使有序的部分后移
-            for (int j = i -1; j >= low; j--) {
+            for (int j = i - 1; j >= low; --j) {
                 arr[j + 1] = arr[j];
             }
-            // 将这个数字放回合适的位置
-            arr[low] = arr[0];
+            arr[low] = k;
         }
     }
 
@@ -124,4 +118,6 @@ public class Demo01 {
             }
         }
     }
+
+
 }
