@@ -6,7 +6,7 @@ package com.company.chapter9;
 public class Demo01 {
 
     public static void main(String[] args) {
-        int[] arr = {0, 1, 23, 42, 11, 32, 23};
+        int[] arr = {0 ,15, 18, 38, 6, 80, 32, 50, 75, 90};
         // 便利前的顺序为
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -15,11 +15,11 @@ public class Demo01 {
         // 直接插入排序
         // binSort(arr);
         // 冒泡排序
-        // bubbleSort(arr);
+        bubbleSort(arr);
         // 选择排序
         // selectSort(arr);
         // 快速排序
-        quickSort(arr,1, arr.length - 1);
+        // quickSort(arr,1, arr.length - 1);
         // 结果输出
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
