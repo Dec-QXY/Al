@@ -8,10 +8,10 @@ public class Demo01 {
     public static void main(String[] args) {
         int[] arr = {0 ,15, 18, 38, 6, 80, 32, 50, 75, 90};
         // 便利前的顺序为
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int j : arr) {
+            System.out.print(j + " ");
         }
-        System.out.println("");
+        System.out.println();
         // 直接插入排序
         // binSort(arr);
         // 冒泡排序
@@ -21,8 +21,8 @@ public class Demo01 {
         // 快速排序
         // quickSort(arr,1, arr.length - 1);
         // 结果输出
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int j : arr) {
+            System.out.print(j + " ");
         }
     }
 
